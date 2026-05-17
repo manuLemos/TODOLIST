@@ -1,4 +1,5 @@
-const apiBase = 'http://localhost:3000';
+const apiBase =
+  window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '/api';
 
 async function fetchTasks(){
   const res = await fetch(`${apiBase}/tasks`);
