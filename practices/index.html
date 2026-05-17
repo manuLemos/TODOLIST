@@ -1,0 +1,2017 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Práticas e Padrões - TODOLIST Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#praticas-e-padroes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TODOLIST Docs" class="md-header__button md-logo" aria-label="TODOLIST Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TODOLIST Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práticas e Padrões
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TODOLIST Docs" class="md-nav__button md-logo" aria-label="TODOLIST Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TODOLIST Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práticas e Padrões
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práticas e Padrões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padroes-arquiteturais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões Arquiteturais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Padrões Arquiteturais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mvc-model-view-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVC (Model-View-Controller)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mono-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mono-Repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-de-pastas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Pastas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padroes-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões de Código
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Padrões de Código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-style-automatizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Style Automatizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-responsibility-principle-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Responsibility Principle (SRP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boas-praticas-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas de Desenvolvimento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boas Práticas de Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tratamento-de-erros-e-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tratamento de Erros e Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamento-semantico-semver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento Semântico (SemVer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boas-praticas-de-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas de UX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boas Práticas de UX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-responsivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Responsivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acessibilidade-a11y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acessibilidade (A11y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-percebida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Percebida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consistência Visual
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boas-praticas-de-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas de Documentação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boas Práticas de Documentação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentacao-tecnica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação Técnica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentarios-no-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comentários no Código
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referência Rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-externos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos Externos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padroes-arquiteturais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões Arquiteturais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Padrões Arquiteturais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mvc-model-view-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVC (Model-View-Controller)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mono-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mono-Repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-de-pastas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Pastas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padroes-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões de Código
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Padrões de Código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-style-automatizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Style Automatizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-responsibility-principle-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Responsibility Principle (SRP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boas-praticas-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas de Desenvolvimento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boas Práticas de Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tratamento-de-erros-e-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tratamento de Erros e Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamento-semantico-semver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento Semântico (SemVer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boas-praticas-de-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas de UX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boas Práticas de UX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-responsivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Responsivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acessibilidade-a11y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acessibilidade (A11y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-percebida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Percebida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consistência Visual
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boas-praticas-de-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas de Documentação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boas Práticas de Documentação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentacao-tecnica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação Técnica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentarios-no-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comentários no Código
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referência Rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-externos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos Externos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="praticas-e-padroes">Práticas e Padrões</h1>
+<p>Documento detalhado de boas práticas e padrões de engenharia de software adotados no projeto TODOLIST. Cada prática inclui justificativa, exemplos e referências para implementação.</p>
+<hr />
+<h2 id="indice">Índice</h2>
+<ol>
+<li><a href="#padrões-arquiteturais">Padrões Arquiteturais</a></li>
+<li>MVC</li>
+<li>Mono-Repo</li>
+<li>Estrutura de Pastas</li>
+<li><a href="#padrões-de-código">Padrões de Código</a></li>
+<li>Naming Conventions</li>
+<li>Code Style Automatizado</li>
+<li>Single Responsibility Principle</li>
+<li><a href="#boas-práticas-de-desenvolvimento">Boas Práticas de Desenvolvimento</a></li>
+<li>Testes</li>
+<li>Code Review</li>
+<li>Tratamento de Erros e Logs</li>
+<li>Versionamento Semântico</li>
+<li><a href="#boas-práticas-de-ux">Boas Práticas de UX</a></li>
+<li>Design Responsivo</li>
+<li>Acessibilidade</li>
+<li>Performance Percebida</li>
+<li>Consistência Visual</li>
+<li><a href="#boas-práticas-de-documentação">Boas Práticas de Documentação</a></li>
+<li>Documentação Técnica</li>
+<li>Comentários no Código</li>
+<li>Changelog</li>
+</ol>
+<hr />
+<h2 id="padroes-arquiteturais">Padrões Arquiteturais</h2>
+<h3 id="mvc-model-view-controller">MVC (Model-View-Controller)</h3>
+<p><strong>Definição:</strong>
+Separação da aplicação em três camadas independentes:</p>
+<ul>
+<li><strong>Model</strong>: Contém a lógica de negócio, validações, acesso a dados e repositórios.</li>
+<li><strong>View</strong>: Responsável pela apresentação visual e interação com o usuário.</li>
+<li><strong>Controller</strong>: Orquestra a comunicação entre Model e View, valida entrada e formata respostas.</li>
+</ul>
+<p><strong>Exemplo:</strong></p>
+<pre><code>src/api/
+  ├── models/
+  │   └── Task.js          # Lógica de tarefa, validações
+  ├── controllers/
+  │   └── TaskController.js # Orquestração, rotas HTTP
+  └── repositories/
+      └── TaskRepository.js # Acesso a dados (em memória)
+
+src/web/
+  ├── views/
+  │   └── TaskList.html    # Renderização de tarefas
+  └── controllers/
+      └── app.js           # Lógica de UI e eventos
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Testabilidade</strong>: Model pode ser testado isoladamente sem dependencies de View/HTTP.</li>
+<li><strong>Manutenibilidade</strong>: Mudanças de UI não afetam lógica de negócio.</li>
+<li><strong>Reusabilidade</strong>: Model pode ser acessado por múltiplas Views (web, mobile, CLI).</li>
+<li><strong>Escalabilidade</strong>: Novas features podem ser adicionadas sem quebrar camadas existentes.</li>
+</ol>
+<p><strong>Quando Usar:</strong>
+✅ Sempre—é o padrão mandatório do projeto.</p>
+<p><strong>Quando Não Usar:</strong>
+❌ Nunca. MVC é obrigatório em toda a arquitetura.</p>
+<hr />
+<h3 id="mono-repo">Mono-Repo</h3>
+<p><strong>Definição:</strong>
+Múltiplos pacotes/aplicações gerenciadas em um único repositório Git com:</p>
+<ul>
+<li>Dependências compartilhadas (package.json raiz).</li>
+<li>Scripts de build, teste e CI centralizados.</li>
+<li>Histórico de código coesivo.</li>
+</ul>
+<p><strong>Estrutura:</strong></p>
+<pre><code>TODOLIST/
+├── src/
+│   ├── api/      # Backend
+│   └── web/      # Frontend
+├── docs/         # Documentação
+├── package.json  # Dependências raiz
+└── mkdocs.yml    # Config MkDocs
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Sincronização</strong>: Frontend e backend evoluem juntos; breaking changes são detectados imediatamente.</li>
+<li><strong>Code Sharing</strong>: Utilitários, tipos, constantes compartilhados sem publish/versioning.</li>
+<li><strong>CI Simplificado</strong>: Apenas um repositório para configurar webhooks, secrets, etc.</li>
+<li><strong>Onboarding</strong>: Nova pessoa clona um repo, não três.</li>
+</ol>
+<p><strong>Exemplo de Compartilhamento:</strong></p>
+<pre><code class="language-javascript">// src/shared/constants.js (hipotético)
+export const MAX_TASKS = 100;
+export const TASK_STATUS = { PENDING: 'pending', DONE: 'done' };
+
+// src/api/controllers/TaskController.js
+import { MAX_TASKS, TASK_STATUS } from '../shared/constants.js';
+
+// src/web/app.js
+import { TASK_STATUS } from '../shared/constants.js';
+</code></pre>
+<p><strong>Quando Usar:</strong>
+✅ Projeto com múltiplos pacotes fortemente relacionados (frontend + backend, services relacionados).
+❌ Não usar se pacotes são independentes ou com ciclos de release diferentes.</p>
+<hr />
+<h3 id="estrutura-de-pastas">Estrutura de Pastas</h3>
+<p><strong>Padrão:</strong></p>
+<pre><code>src/
+├── api/                 # Backend
+│   ├── models/         # Entidades, validações
+│   ├── controllers/    # Handlers de requisições
+│   ├── repositories/   # Acesso a dados
+│   ├── routes.js       # Definição de rotas
+│   ├── index.js        # Entry point
+│   └── package.json
+├── web/                # Frontend
+│   ├── views/         # Páginas HTML
+│   ├── controllers/   # Lógica de UI
+│   ├── styles/        # CSS
+│   ├── index.html
+│   ├── app.js         # Entry point
+│   └── package.json
+├── docs/              # Documentação (MkDocs)
+│   ├── index.md
+│   ├── architecture.md
+│   ├── practices.md
+│   └── run.md
+├── mkdocs.yml         # Configuração MkDocs
+├── package.json       # Dependências raiz
+└── README.md
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Previsibilidade</strong>: Novo desenvolvedora sabe onde procurar.</li>
+<li><strong>Escalabilidade</strong>: Estrutura suporta crescimento sem refatoração radical.</li>
+<li><strong>Separação de Concerns</strong>: Backend isolado de frontend.</li>
+<li><strong>Dokumentação Centralizada</strong>: docs/ em uma localização clara.</li>
+</ol>
+<hr />
+<h2 id="padroes-de-codigo">Padrões de Código</h2>
+<h3 id="naming-conventions">Naming Conventions</h3>
+<p><strong>Convenções:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Padrão</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arquivos JS</td>
+<td><code>camelCase.js</code> ou <code>kebab-case.js</code></td>
+<td><code>taskController.js</code>, <code>task-repository.js</code></td>
+</tr>
+<tr>
+<td>Classes/Constructores</td>
+<td><code>PascalCase</code></td>
+<td><code>class TaskRepository { }</code></td>
+</tr>
+<tr>
+<td>Funções/Métodos</td>
+<td><code>camelCase</code></td>
+<td><code>function getTasks() { }</code></td>
+</tr>
+<tr>
+<td>Constantes</td>
+<td><code>UPPER_SNAKE_CASE</code></td>
+<td><code>const MAX_RETRIES = 3;</code></td>
+</tr>
+<tr>
+<td>Variáveis</td>
+<td><code>camelCase</code></td>
+<td><code>let activeTaskCount = 0;</code></td>
+</tr>
+<tr>
+<td>Booleanos</td>
+<td><code>is*</code>, <code>has*</code>, <code>can*</code></td>
+<td><code>isCompleted</code>, <code>hasChildren</code>, <code>canDelete</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplos:</strong></p>
+<pre><code class="language-javascript">// ✅ Bom
+class TaskRepository {
+  constructor() {
+    this.MAX_TASKS = 100;
+  }
+
+  getTasks(userId) {
+    const userTasks = [];
+    const isActive = true;
+    return userTasks.filter(t =&gt; t.isActive === isActive);
+  }
+}
+
+// ❌ Ruim
+class taskRepository {
+  constructor() {
+    this.max_tasks = 100;
+  }
+
+  get_tasks(user_id) {
+    const UserTasks = [];
+    return UserTasks;
+  }
+}
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Consistência</strong>: Codebase inteira segue padrão único.</li>
+<li><strong>Legibilidade</strong>: Tipo de elemento é evidente pelo padrão de nome.</li>
+<li><strong>Busca</strong>: Padrões consistentes facilitam grep/search.</li>
+<li><strong>Revisão</strong>: Menos comentários em code reviews sobre estilo.</li>
+</ol>
+<hr />
+<h3 id="code-style-automatizado">Code Style Automatizado</h3>
+<p><strong>Ferramentas:</strong></p>
+<ul>
+<li><strong>Prettier</strong>: Formatação automática (indentação, espaçamento, etc).</li>
+<li><strong>ESLint</strong>: Detecção de bugs e anti-patterns.</li>
+<li><strong>Pre-commit Hooks</strong>: Lint/format automático antes de commit.</li>
+</ul>
+<p><strong>Configuração Recomendada:</strong></p>
+<pre><code class="language-json">// .prettierrc
+{
+  &quot;semi&quot;: true,
+  &quot;singleQuote&quot;: true,
+  &quot;trailingComma&quot;: &quot;es5&quot;,
+  &quot;printWidth&quot;: 100,
+  &quot;tabWidth&quot;: 2
+}
+</code></pre>
+<pre><code class="language-json">// .eslintrc.json
+{
+  &quot;env&quot;: {
+    &quot;browser&quot;: true,
+    &quot;node&quot;: true,
+    &quot;es2021&quot;: true
+  },
+  &quot;extends&quot;: [&quot;eslint:recommended&quot;],
+  &quot;rules&quot;: {
+    &quot;no-console&quot;: &quot;warn&quot;,
+    &quot;no-unused-vars&quot;: &quot;error&quot;
+  }
+}
+</code></pre>
+<p><strong>Scripts no package.json:</strong></p>
+<pre><code class="language-json">{
+  &quot;scripts&quot;: {
+    &quot;lint&quot;: &quot;eslint src/&quot;,
+    &quot;format&quot;: &quot;prettier --write src/&quot;,
+    &quot;lint:check&quot;: &quot;eslint src/ &amp;&amp; prettier --check src/&quot;
+  }
+}
+</code></pre>
+<p><strong>CI Obrigatório:</strong></p>
+<pre><code class="language-yaml"># Exemplo GitHub Actions
+- name: Lint
+  run: npm run lint:check
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Objetividade</strong>: Remove decisões subjetivas sobre estilo.</li>
+<li><strong>Automação</strong>: Desenvolvedor não precisa pensar em formatação.</li>
+<li><strong>PRs Limpas</strong>: Diffs mostram apenas lógica, não mudanças de espaçamento.</li>
+<li><strong>Consistência Global</strong>: Mesmo desenvolvedor novo segue padrão sem esforço.</li>
+</ol>
+<hr />
+<h3 id="single-responsibility-principle-srp">Single Responsibility Principle (SRP)</h3>
+<p><strong>Definição:</strong>
+Cada classe/função deve ter uma única razão para mudar. Responsabilidade = razão para mudar.</p>
+<p><strong>Exemplos:</strong></p>
+<pre><code class="language-javascript">// ✅ Bom - Responsabilidades separadas
+class Task {
+  constructor(id, title, completed) {
+    this.id = id;
+    this.title = title;
+    this.completed = completed;
+  }
+
+  isValid() {
+    return this.title &amp;&amp; this.title.length &gt; 0;
+  }
+}
+
+class TaskRepository {
+  constructor() {
+    this.tasks = [];
+  }
+
+  save(task) {
+    if (!task.isValid()) throw new Error('Invalid task');
+    this.tasks.push(task);
+    return task;
+  }
+
+  findById(id) {
+    return this.tasks.find(t =&gt; t.id === id);
+  }
+}
+
+class TaskController {
+  constructor(repository) {
+    this.repository = repository;
+  }
+
+  createTask(req, res) {
+    try {
+      const task = new Task(1, req.body.title, false);
+      const saved = this.repository.save(task);
+      res.json({ success: true, data: saved });
+    } catch (error) {
+      res.status(400).json({ success: false, error: error.message });
+    }
+  }
+}
+
+// ❌ Ruim - Responsabilidades misturadas
+class TaskManager {
+  createTask(title) {
+    if (!title || title.length === 0) {
+      throw new Error('Invalid title');
+    }
+    const task = { id: Date.now(), title, completed: false };
+    // Salvando em array
+    if (!this.tasks) this.tasks = [];
+    this.tasks.push(task);
+    // Formatando resposta HTTP
+    return { success: true, statusCode: 201, data: task };
+  }
+}
+</code></pre>
+<p><strong>Benefícios:</strong></p>
+<ol>
+<li><strong>Testabilidade</strong>: Cada classe testada independentemente.</li>
+<li><strong>Reusabilidade</strong>: <code>TaskRepository</code> pode ser usado por diferentes controllers.</li>
+<li><strong>Manutenibilidade</strong>: Mudanças de lógica isoladas em uma classe.</li>
+<li><strong>Flexibilidade</strong>: Trocar repositório de dados sem afetar Task.</li>
+</ol>
+<hr />
+<h2 id="boas-praticas-de-desenvolvimento">Boas Práticas de Desenvolvimento</h2>
+<h3 id="testes">Testes</h3>
+<p><strong>Tipos de Testes:</strong></p>
+<ol>
+<li><strong>Unitários</strong>: Testa função/método isolado com mocks de dependências.</li>
+<li><strong>Integração</strong>: Testa múltiplas camadas juntas (ex: Controller + Repository).</li>
+<li><strong>E2E</strong>: Testa fluxo completo do usuário (ex: criar tarefa via UI).</li>
+</ol>
+<p><strong>Estrutura:</strong></p>
+<pre><code class="language-javascript">// ✅ Exemplo com Jest
+describe('TaskRepository', () =&gt; {
+  let repository;
+
+  beforeEach(() =&gt; {
+    repository = new TaskRepository();
+  });
+
+  describe('save()', () =&gt; {
+    it('should save a valid task', () =&gt; {
+      const task = new Task(1, 'Buy milk', false);
+      const saved = repository.save(task);
+      expect(saved.id).toBe(1);
+      expect(repository.findById(1)).toEqual(task);
+    });
+
+    it('should throw error for invalid task', () =&gt; {
+      const invalidTask = new Task(1, '', false);
+      expect(() =&gt; repository.save(invalidTask)).toThrow();
+    });
+  });
+
+  describe('findById()', () =&gt; {
+    it('should return task if found', () =&gt; {
+      const task = new Task(1, 'Buy milk', false);
+      repository.save(task);
+      expect(repository.findById(1)).toEqual(task);
+    });
+
+    it('should return undefined if not found', () =&gt; {
+      expect(repository.findById(999)).toBeUndefined();
+    });
+  });
+});
+</code></pre>
+<p><strong>Cobertura Mínima:</strong></p>
+<ul>
+<li>✅ Lógica crítica: 80%+</li>
+<li>✅ Validações: 100%</li>
+<li>✅ Casos extremos (empty, null, duplicatas): cobertura completa</li>
+</ul>
+<p><strong>Quando Testar:</strong></p>
+<ul>
+<li>Funções puras (sem side effects).</li>
+<li>Validações.</li>
+<li>Repositórios/Acesso a dados.</li>
+<li>Controllers (mocks de repository).</li>
+</ul>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Confiança</strong>: Mudanças seguras com testes verde.</li>
+<li><strong>Documentação Viva</strong>: Testes mostram como usar o código.</li>
+<li><strong>Bugs Reduzidos</strong>: Problemas detectados antes de produção.</li>
+<li><strong>Refatoração Segura</strong>: Remover código técnico sem quebrar comportamento.</li>
+</ol>
+<hr />
+<h3 id="code-review">Code Review</h3>
+<p><strong>Processo:</strong></p>
+<ol>
+<li><strong>PR Pequena</strong>: Máx 400 linhas quando possível; se &gt;400, dividir.</li>
+<li><strong>Descrição Clara</strong>: "O quê", "por quê", screenshot se UI.</li>
+<li><strong>Checklist</strong>:</li>
+<li>✅ Testes adicionados/atualizados.</li>
+<li>✅ Documentação atualizada.</li>
+<li>✅ Sem console.log/debugger.</li>
+<li>✅ Lint/format passou.</li>
+<li>✅ Segue padrões do projeto.</li>
+<li><strong>Aprovação</strong>: ≥1 reviewer.</li>
+<li><strong>Merge</strong>: Após aprovação; deletar branch.</li>
+</ol>
+<p><strong>Exemplo de Boa Descrição:</strong></p>
+<pre><code class="language-markdown">## O quê
+Implementa feature de marcar tarefas como concluídas.
+
+## Por quê
+Usuário precisa indicar progresso nas tarefas.
+
+## Como Testar
+1. Criar nova tarefa
+2. Clicar checkbox para marcar concluída
+3. Verificar se status muda e é salvo
+
+## Screenshots
+[Imagem da UI]
+
+## Breaking Changes
+Nenhuma.
+
+## Checklist
+- [x] Testes adicionados (test coverage: 85%)
+- [x] Documentação atualizada (docs/api.md)
+- [x] Lint passou (npm run lint:check)
+- [x] Sem console.log/debugger
+</code></pre>
+<p><strong>Feedback Construtivo:</strong></p>
+<pre><code>❌ &quot;Isso está errado.&quot;
+✅ &quot;Sugerindo usar `const` em vez de `let` aqui para evitar reatribuição acidental. Preferência do projeto (see constitution.md).&quot;
+
+❌ &quot;Falta teste.&quot;
+✅ &quot;Testamos essa função em TaskRepository? Se não, sugerindo adicionar teste unitário em `/tests/TaskRepository.test.js`.&quot;
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Conhecimento Compartilhado</strong>: Equipe inteira entende mudanças.</li>
+<li><strong>Qualidade Garantida</strong>: Outro par valida antes de merge.</li>
+<li><strong>Padrões Aplicados</strong>: Consistência enforçada.</li>
+<li><strong>Mentoría</strong>: Desenvolvimento contínuo via feedback.</li>
+</ol>
+<hr />
+<h3 id="tratamento-de-erros-e-logs">Tratamento de Erros e Logs</h3>
+<p><strong>Estrutura de Logs:</strong></p>
+<pre><code class="language-javascript">// ✅ Bom - Logs estruturados com contexto
+class TaskController {
+  createTask(req, res) {
+    console.log('[INFO] Creating task', { userId: req.userId, title: req.body.title });
+    try {
+      const task = new Task(Date.now(), req.body.title, false);
+      const saved = this.repository.save(task);
+      console.log('[DEBUG] Task saved', { taskId: saved.id });
+      res.json({ success: true, data: saved });
+    } catch (error) {
+      console.error('[ERROR] Failed to create task', { userId: req.userId, error: error.message });
+      res.status(400).json({ 
+        success: false, 
+        error: 'Failed to create task. Please check your input.' 
+      });
+    }
+  }
+}
+
+// ❌ Ruim - Logs vagos, stack trace exposto
+try {
+  // ...
+} catch (error) {
+  console.error(error); // Expõe stack trace interno
+  res.status(500).json({ error: error.toString() }); // Mensagem técnica para usuário
+}
+</code></pre>
+<p><strong>Níveis de Log:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>Uso</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEBUG</td>
+<td>Informações detalhadas para troubleshoot</td>
+<td><code>Loaded config from file</code></td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>Eventos normais</td>
+<td><code>Task created with ID 123</code></td>
+</tr>
+<tr>
+<td>WARN</td>
+<td>Situação incomum mas tolerada</td>
+<td><code>Retry #3 attempting connection</code></td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>Falha de operação</td>
+<td><code>Failed to save task: DB error</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mensagens de Erro para Usuário:</strong></p>
+<pre><code class="language-javascript">// ✅ Bom - Claro e acionável
+res.status(400).json({ 
+  error: 'Task title is required. Please provide a non-empty title.' 
+});
+
+// ❌ Ruim - Técnico, não acionável
+res.status(400).json({ 
+  error: 'ValidationError: title is required' 
+});
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Debugging Rápido</strong>: Logs estruturados localizamproblemas rapidamente.</li>
+<li><strong>Experiência Usuário</strong>: Mensagens claras em vez de stack traces.</li>
+<li><strong>Monitoramento</strong>: Logs permitem tracking de padrões de erro.</li>
+<li><strong>Rastreabilidade</strong>: Contexto (user, task ID) facilita reprodução.</li>
+</ol>
+<hr />
+<h3 id="versionamento-semantico-semver">Versionamento Semântico (SemVer)</h3>
+<p><strong>Formato: MAJOR.MINOR.PATCH</strong></p>
+<table>
+<thead>
+<tr>
+<th>Segmento</th>
+<th>Quando Incrementar</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAJOR</td>
+<td>Breaking changes</td>
+<td>1.0.0 → 2.0.0 (muda assinatura de função)</td>
+</tr>
+<tr>
+<td>MINOR</td>
+<td>Novo recurso (backward-compatible)</td>
+<td>1.0.0 → 1.1.0 (novo parâmetro opcional)</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Bug fix</td>
+<td>1.0.0 → 1.0.1 (corrige erro)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplos:</strong></p>
+<pre><code>1.0.0 — Versão inicial
+1.0.1 — Bug fix em criação de tarefa
+1.1.0 — Novo recurso: prioridade de tarefas
+2.0.0 — Refator: muda estrutura de dados (breaking)
+</code></pre>
+<p><strong>Comunicação em CHANGELOG.md:</strong></p>
+<pre><code class="language-markdown">## [2.0.0] - 2026-05-20
+
+### Added
+- Novo campo `priority` em tarefas (HIGH, MEDIUM, LOW)
+
+### Changed
+- **BREAKING**: Estrutura JSON de tarefa mudou; migração necessária
+
+### Fixed
+- Bug: tarefas vazias criadas com título em branco
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Previsibilidade</strong>: Versão comunica impacto de mudança.</li>
+<li><strong>Gerenciamento de Dependências</strong>: Consumidores decidem se atualizar.</li>
+<li><strong>Compatibilidade</strong>: Clientes sabem se versão nova quebra integração.</li>
+</ol>
+<hr />
+<h2 id="boas-praticas-de-ux">Boas Práticas de UX</h2>
+<h3 id="design-responsivo">Design Responsivo</h3>
+<p><strong>Princípios:</strong></p>
+<ol>
+<li><strong>Mobile-First</strong>: Começar com layout móvel, expandir para desktop.</li>
+<li><strong>Breakpoints</strong>: Testar em múltiplos tamanhos (320px, 768px, 1024px, 1440px).</li>
+<li><strong>Flexibilidade</strong>: Usar Flexbox/Grid, não pixel-perfect layouts.</li>
+</ol>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-html">&lt;!-- ✅ Bom - Responsivo --&gt;
+&lt;style&gt;
+  .task-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .task-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .task-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+&lt;/style&gt;
+
+&lt;!-- ❌ Ruim - Fixed width --&gt;
+&lt;style&gt;
+  .task-list {
+    width: 1200px;
+    margin: 0 auto;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Teste em Dispositivos Reais:</strong></p>
+<ul>
+<li>✅ Smartphone (iOS Safari, Chrome Android).</li>
+<li>✅ Tablet (iPad, Android).</li>
+<li>✅ Desktop (Chrome, Firefox, Safari, Edge).</li>
+</ul>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Mercado</strong>: &gt;50% do tráfego é móvel.</li>
+<li><strong>Acessibilidade</strong>: Layouts responsivos melhoram usabilidade geral.</li>
+<li><strong>SEO</strong>: Google prioriza sites mobile-friendly.</li>
+</ol>
+<hr />
+<h3 id="acessibilidade-a11y">Acessibilidade (A11y)</h3>
+<p><strong>Padrões WCAG 2.1 Nível AA:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Prática</th>
+<th>Implementação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contraste</strong></td>
+<td>Mínimo 4.5:1 (texto normal)</td>
+</tr>
+<tr>
+<td><strong>Labels em Formulários</strong></td>
+<td><code>&lt;label for="inputId"&gt;</code> + <code>&lt;input id="inputId"&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Navegação por Teclado</strong></td>
+<td>Tab, Enter, Arrow keys funcionam</td>
+</tr>
+<tr>
+<td><strong>ARIA</strong></td>
+<td><code>aria-label</code>, <code>aria-describedby</code>, <code>role</code> quando semântica HTML insuficiente</td>
+</tr>
+<tr>
+<td><strong>Imagens</strong></td>
+<td><code>alt</code> text descritivo ou vazio se decorativa</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-html">&lt;!-- ✅ Bom --&gt;
+&lt;label for=&quot;task-title&quot;&gt;Task Title:&lt;/label&gt;
+&lt;input 
+  id=&quot;task-title&quot; 
+  type=&quot;text&quot; 
+  placeholder=&quot;Enter task...&quot;
+  aria-describedby=&quot;title-hint&quot;
+&gt;
+&lt;p id=&quot;title-hint&quot;&gt;Max 100 characters&lt;/p&gt;
+
+&lt;button aria-label=&quot;Mark task as complete&quot;&gt;✓&lt;/button&gt;
+
+&lt;!-- ❌ Ruim --&gt;
+&lt;input type=&quot;text&quot; placeholder=&quot;Task&quot;&gt;
+&lt;button&gt;✓&lt;/button&gt;
+</code></pre>
+<p><strong>Ferramenta de Teste:</strong></p>
+<ul>
+<li>Chrome DevTools → Lighthouse → Accessibility</li>
+<li>axe DevTools extension</li>
+<li>NVDA (screenreader gratuito para Windows)</li>
+</ul>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Inclusão</strong>: Acesso para usuários com deficiências (15% população global).</li>
+<li><strong>Melhor UX Geral</strong>: Acessibilidade melhora usabilidade para todos.</li>
+<li><strong>Legal</strong>: Muitos países exigem A11y para web públicas.</li>
+</ol>
+<hr />
+<h3 id="performance-percebida">Performance Percebida</h3>
+<p><strong>Técnicas:</strong></p>
+<ol>
+<li><strong>Dados Críticos Primeiro</strong>: Carregar dados principais antes de renderizar UI.</li>
+<li><strong>Indicadores de Progresso</strong>: Spinner, skeleton loader durante operações.</li>
+<li><strong>Operações Não-Bloqueantes</strong>: Usar <code>async/await</code>, não congelar UI.</li>
+</ol>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-javascript">// ✅ Bom - Feedback imediato
+async function createTask(title) {
+  // UI atualiza imediatamente (otimista)
+  const tempTask = { id: Math.random(), title, completed: false };
+  renderTask(tempTask); // Mostra tarefa temporária
+
+  try {
+    const saved = await api.createTask(title);
+    updateTask(tempTask.id, saved); // Substitui por versão real
+  } catch (error) {
+    removeTask(tempTask.id); // Remove se falha
+    showError('Failed to create task');
+  }
+}
+
+// ❌ Ruim - UI congela esperando server
+function createTask(title) {
+  const saved = api.createTask(title); // Bloqueia até resposta
+  renderTask(saved);
+}
+</code></pre>
+<p><strong>Métricas:</strong></p>
+<ul>
+<li>Core Web Vitals (Google):</li>
+<li>LCP (Largest Contentful Paint): &lt; 2.5s</li>
+<li>FID (First Input Delay): &lt; 100ms</li>
+<li>CLS (Cumulative Layout Shift): &lt; 0.1</li>
+</ul>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Retenção</strong>: Usuário abandona site se sentir lento.</li>
+<li><strong>Conversão</strong>: Performance impacta taxa de conversão (+1s delay = -7% conversão).</li>
+<li><strong>SEO</strong>: Google ranking favorece sites rápidos.</li>
+</ol>
+<hr />
+<h3 id="consistencia-visual">Consistência Visual</h3>
+<p><strong>Design Tokens:</strong></p>
+<p>Centralizar cores, tipografia, espaçamento em variáveis CSS:</p>
+<pre><code class="language-css">/* ✅ Bom - Tokens centralizados */
+:root {
+  /* Cores */
+  --color-primary: #2563eb;
+  --color-secondary: #f3f4f6;
+  --color-error: #dc2626;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+
+  /* Tipografia */
+  --font-family-base: 'Segoe UI', Tahoma, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+
+  /* Espaçamento */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+/* Uso */
+.button {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: var(--font-size-base);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+}
+
+/* ❌ Ruim - Valores hard-coded */
+.button {
+  background-color: #2563eb;
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+</code></pre>
+<p><strong>Componentes Reutilizáveis:</strong></p>
+<pre><code class="language-html">&lt;!-- ✅ Bom - Biblioteca de componentes --&gt;
+&lt;button class=&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
+&lt;button class=&quot;btn btn-secondary&quot;&gt;Cancel&lt;/button&gt;
+&lt;button class=&quot;btn btn-small&quot;&gt;Delete&lt;/button&gt;
+
+&lt;!-- ❌ Ruim - Estilos inline únicos --&gt;
+&lt;button style=&quot;background: #2563eb; padding: 1rem; border-radius: 0.5rem;&quot;&gt;Save&lt;/button&gt;
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Manutenção</strong>: Atualizar tema global em um lugar.</li>
+<li><strong>Consistência</strong>: UI uniforme sem duplicação.</li>
+<li><strong>Performance</strong>: Menos CSS duplicado.</li>
+<li><strong>Escalabilidade</strong>: Adicionar novos componentes rápido.</li>
+</ol>
+<hr />
+<h2 id="boas-praticas-de-documentacao">Boas Práticas de Documentação</h2>
+<h3 id="documentacao-tecnica">Documentação Técnica</h3>
+<p><strong>Estrutura MkDocs:</strong></p>
+<pre><code>docs/
+├── index.md           # Homepage/Intro
+├── architecture.md    # Design de arquitetura
+├── practices.md       # (Este arquivo) Padrões e boas práticas
+├── run.md            # Como rodar localmente
+├── api.md            # Referência de API (se aplicável)
+└── troubleshooting.md # Problemas comuns
+</code></pre>
+<p><strong>Conteúdo Mínimo:</strong></p>
+<ol>
+<li><strong>Architecture</strong>: Diagrama MVC, decisões, por que.</li>
+<li><strong>Setup</strong>: Pré-requisitos, instalação, verificação.</li>
+<li><strong>Guia de Contribuição</strong>: Como adicionar features, padrões a seguir.</li>
+<li><strong>API</strong>: Endpoints, payloads, exemplos de resposta.</li>
+<li><strong>Troubleshooting</strong>: Problemas comuns e soluções.</li>
+</ol>
+<p><strong>Build e Deploy:</strong></p>
+<pre><code class="language-bash"># Localmente
+mkdocs serve # http://localhost:8000
+
+# Deploy (ex: GitHub Pages)
+mkdocs build
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Onboarding</strong>: Novo dev entende projeto rápido.</li>
+<li><strong>Redução de Tickets</strong>: Respostas a perguntas comuns no docs.</li>
+<li><strong>Referência</strong>: Decisões históricas documentadas.</li>
+<li><strong>Profissionalismo</strong>: Projeto com docs é percebido como maduro.</li>
+</ol>
+<hr />
+<h3 id="comentarios-no-codigo">Comentários no Código</h3>
+<p><strong>Regra de Ouro</strong>: Comentários explicam <em>por quê</em>, nunca <em>o quê</em>.</p>
+<p><strong>O Código já Fala o Quê:</strong></p>
+<pre><code class="language-javascript">// ❌ Comentário óbvio (ruim)
+function getTasks(userId) {
+  // Initialize empty array
+  const tasks = [];
+  // Loop through all tasks
+  for (let i = 0; i &lt; this.allTasks.length; i++) {
+    // If task belongs to user, add to array
+    if (this.allTasks[i].userId === userId) {
+      tasks.push(this.allTasks[i]);
+    }
+  }
+  return tasks;
+}
+
+// ✅ Código limpo + comentário útil
+function getTasks(userId) {
+  // Filter tasks by user; O(n) implementation acceptable for &lt;1000 tasks
+  // For future: consider indexing by userId if dataset grows
+  return this.allTasks.filter(task =&gt; task.userId === userId);
+}
+</code></pre>
+<p><strong>Quando Comentar:</strong></p>
+<ol>
+<li><strong>Decisões Não-Óbvias</strong>: Trade-offs, por que não alternativa.</li>
+<li><strong>Workarounds</strong>: Bug externo, compatibilidade, versão específica.</li>
+<li><strong>Complexidade</strong>: Algoritmo não-trivial, lógica obscura.</li>
+</ol>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-javascript">// Workaround: Firefox bug (https://bugzilla.mozilla.org/show_bug.cgi?id=123456)
+// addEventListener não funciona em setTimeout, usar requestAnimationFrame
+requestAnimationFrame(() =&gt; {
+  element.addEventListener('click', handler);
+});
+
+// Trade-off: Array em memória vs DB
+// Escolher memória por: (1) simplicidade, (2) velocidade, (3) sem persistência requerida
+// Revisitar se dados crescerem &gt;10MB ou se persistência for necessária
+this.tasks = [];
+</code></pre>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Manutenção Futura</strong>: Próximo dev entende contexto.</li>
+<li><strong>Reduz Refatorações Erradas</strong>: Evita "melhorias" que quebram workarounds.</li>
+<li><strong>Código Legível</strong>: Foco em intenção, não implementação.</li>
+</ol>
+<hr />
+<h3 id="changelog">Changelog</h3>
+<p><strong>Formato: Keep a Changelog</strong></p>
+<pre><code class="language-markdown"># Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/),
+and this project adheres to [Semantic Versioning](https://semver.org/).
+
+## [Unreleased]
+
+## [1.2.0] - 2026-05-15
+
+### Added
+- New `priority` field in tasks (HIGH, MEDIUM, LOW)
+- Filter tasks by status UI
+
+### Changed
+- Updated dependencies: Node 18 → 20
+- Improved error messages for validation
+
+### Fixed
+- Bug: Tasks disappearing after page refresh
+- Bug: Checkbox not updating immediately on click
+
+### Deprecated
+- Old `/api/v1/tasks` endpoint (use `/api/v2/tasks`)
+
+### Removed
+- Support for Node 16 (EOL)
+
+### Security
+- Updated `axios` to patch XSS vulnerability
+
+## [1.1.0] - 2026-05-01
+
+### Added
+- Dark mode toggle
+- Search by task title
+
+## [1.0.0] - 2026-04-15
+
+### Added
+- Initial release: create, read, delete tasks
+</code></pre>
+<p><strong>Manutenção:</strong></p>
+<ul>
+<li>Atualizar em cada release.</li>
+<li>Usar seções: Added, Changed, Deprecated, Removed, Fixed, Security.</li>
+<li>Incluir links para PRs/issues quando viável.</li>
+</ul>
+<p><strong>Justificativas:</strong></p>
+<ol>
+<li><strong>Comunicação</strong>: Consumidores sabem quais novidades/breaking changes.</li>
+<li><strong>Histórico</strong>: Fácil consultar quando feature foi adicionada.</li>
+<li><strong>Profissionalismo</strong>: Projeto maduro mantém changelog.</li>
+</ol>
+<hr />
+<h2 id="referencia-rapida">Referência Rápida</h2>
+<table>
+<thead>
+<tr>
+<th>Prática</th>
+<th>Checklist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Commits</strong></td>
+<td>Mensagem descritiva, &lt;50 caracteres, use imperative mood (<code>Add feature</code>, não <code>Added feature</code>)</td>
+</tr>
+<tr>
+<td><strong>Branches</strong></td>
+<td><code>feature/task-priority</code>, <code>bugfix/checkbox-bug</code>, <code>docs/api-docs</code></td>
+</tr>
+<tr>
+<td><strong>PRs</strong></td>
+<td>Pequenas (&lt;400 linhas), descrição clara, testes, lint passa</td>
+</tr>
+<tr>
+<td><strong>Releases</strong></td>
+<td>Tag <code>vX.Y.Z</code>, atualizar CHANGELOG.md, SemVer</td>
+</tr>
+<tr>
+<td><strong>Código</strong></td>
+<td>Lint, SRP, testes, comentários úteis</td>
+</tr>
+<tr>
+<td><strong>Docs</strong></td>
+<td>MkDocs build sem erros, links internos funcionam</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos-externos">Recursos Externos</h2>
+<ul>
+<li><a href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-principles-introduction-to-software-design">SOLID Principles</a></li>
+<li><a href="https://google.github.io/styleguide/">Google Style Guides</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG21/quickref/">Web Accessibility Guidelines (WCAG)</a></li>
+<li><a href="https://semver.org/">Semantic Versioning</a></li>
+<li><a href="https://keepachangelog.com/">Keep a Changelog</a></li>
+<li><a href="https://www.mkdocs.org/">MkDocs Documentation</a></li>
+</ul>
+<hr />
+<p><strong>Última Atualização</strong>: 2026-05-17</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

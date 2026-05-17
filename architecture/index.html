@@ -1,0 +1,816 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../run/">
+      
+      
+        <link rel="next" href="../practices/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Arquitetura - TODOLIST Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arquitetura" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TODOLIST Docs" class="md-header__button md-logo" aria-label="TODOLIST Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TODOLIST Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arquitetura
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TODOLIST Docs" class="md-nav__button md-logo" aria-label="TODOLIST Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TODOLIST Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-diretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Diretórios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-a-constituicao-guiou-escolhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como a Constituição Guiou Escolhas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo de Dados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camadas-detalhadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camadas Detalhadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Camadas Detalhadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-srcapimodels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model (src/api/models/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-srcapirepositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository (src/api/repositories/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller-srcapicontrollers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controller (src/api/controllers/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-srcweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View (src/web/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#razoes-arquiteturais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Razões Arquiteturais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensoes-futuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensões Futuras
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práticas e Padrões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-diretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Diretórios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-a-constituicao-guiou-escolhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como a Constituição Guiou Escolhas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo de Dados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camadas-detalhadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camadas Detalhadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Camadas Detalhadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-srcapimodels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model (src/api/models/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-srcapirepositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository (src/api/repositories/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller-srcapicontrollers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controller (src/api/controllers/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-srcweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View (src/web/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#razoes-arquiteturais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Razões Arquiteturais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensoes-futuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensões Futuras
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="arquitetura">Arquitetura</h1>
+<p>O projeto segue arquitetura MVC e está organizado como mono-repo. Objetivos e justificativas:</p>
+<ul>
+<li><strong>MVC</strong>: Separação clara entre domínio (Model), apresentação (View) e orquestração (Controller) facilita testes, manutenção e substituição de camadas.</li>
+<li><strong>Mono-repo</strong>: Facilita compartilhamento de utilitários, coesão entre frontend e backend e manutenção de scripts/CI centralizados.</li>
+<li><strong>Dados em memória</strong>: Escolhido para simplificar implantação e permitir desenvolvimento rápido; facilita demonstração de comportamento.</li>
+</ul>
+<h2 id="estrutura-de-diretorios">Estrutura de Diretórios</h2>
+<pre><code>src/
+├── api/                    # Backend: Controllers + Models + Repositórios
+│   ├── models/            # Entidades de domínio e validações
+│   ├── controllers/       # Handlers HTTP, orquestração
+│   ├── repositories/      # Acesso a dados (em memória)
+│   ├── routes.js         # Definição de rotas
+│   ├── index.js          # Entry point
+│   └── package.json
+├── web/                    # Frontend: Views + Controllers + Assets
+│   ├── views/            # Páginas HTML
+│   ├── controllers/      # Lógica de UI e eventos
+│   ├── styles/           # CSS
+│   ├── index.html
+│   ├── app.js
+│   └── package.json
+</code></pre>
+<h2 id="como-a-constituicao-guiou-escolhas">Como a Constituição Guiou Escolhas</h2>
+<p>Consulte <a href="../.specify/memory/constitution.md">Constituição do Projeto</a> para padrões de projeto e boas práticas.</p>
+<p>Para detalhes, exemplos práticos e justificativas profundas de cada prática, veja <a href="../practices/">Práticas e Padrões</a>:</p>
+<ul>
+<li><a href="../practices/#padrões-arquiteturais">Padrões Arquiteturais</a>: MVC, Mono-Repo, Estrutura de Pastas</li>
+<li><a href="../practices/#padrões-de-código">Padrões de Código</a>: Naming Conventions, Code Style, SRP</li>
+<li><a href="../practices/#boas-práticas-de-desenvolvimento">Boas Práticas de Desenvolvimento</a>: Testes, Code Review, Logs, Versionamento</li>
+<li><a href="../practices/#boas-práticas-de-ux">Boas Práticas de UX</a>: Responsividade, Acessibilidade, Performance</li>
+<li><a href="../practices/#boas-práticas-de-documentação">Boas Práticas de Documentação</a>: Docs Técnicas, Comentários, Changelog</li>
+</ul>
+<h2 id="fluxo-de-dados">Fluxo de Dados</h2>
+<pre><code>Request HTTP (Cliente)
+    ↓
+Router (routes.js)
+    ↓
+Controller (ex: TaskController)
+    ├→ Valida entrada
+    ├→ Chama Model/Repository
+    └→ Formata resposta
+         ↓
+Response HTTP (Cliente)
+</code></pre>
+<h2 id="camadas-detalhadas">Camadas Detalhadas</h2>
+<h3 id="model-srcapimodels">Model (src/api/models/)</h3>
+<ul>
+<li>Definição de entidades (Task, User, etc).</li>
+<li>Validações lógicas.</li>
+<li>Métodos de manipulação de dados (ex: <code>markAsComplete()</code>).</li>
+</ul>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-javascript">class Task {
+  constructor(id, title, completed = false) {
+    this.id = id;
+    this.title = title;
+    this.completed = completed;
+  }
+
+  isValid() {
+    return this.title &amp;&amp; this.title.length &gt; 0;
+  }
+}
+</code></pre>
+<h3 id="repository-srcapirepositories">Repository (src/api/repositories/)</h3>
+<ul>
+<li>Acesso a dados (em memória, BD futuro, etc).</li>
+<li>Métodos CRUD (Create, Read, Update, Delete).</li>
+<li>Sem lógica de negócio, apenas persistência.</li>
+</ul>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-javascript">class TaskRepository {
+  constructor() {
+    this.tasks = [];
+  }
+
+  save(task) {
+    if (!task.isValid()) throw new Error('Invalid task');
+    this.tasks.push(task);
+    return task;
+  }
+
+  findById(id) {
+    return this.tasks.find(t =&gt; t.id === id);
+  }
+}
+</code></pre>
+<h3 id="controller-srcapicontrollers">Controller (src/api/controllers/)</h3>
+<ul>
+<li>Orquestra Model + Repository.</li>
+<li>Valida entrada HTTP.</li>
+<li>Formata resposta.</li>
+<li>Trata erros.</li>
+</ul>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-javascript">class TaskController {
+  constructor(repository) {
+    this.repository = repository;
+  }
+
+  createTask(req, res) {
+    try {
+      const task = new Task(Date.now(), req.body.title);
+      const saved = this.repository.save(task);
+      res.json({ success: true, data: saved });
+    } catch (error) {
+      res.status(400).json({ success: false, error: error.message });
+    }
+  }
+}
+</code></pre>
+<h3 id="view-srcweb">View (src/web/)</h3>
+<ul>
+<li>HTML estático.</li>
+<li>CSS responsivo com design tokens.</li>
+<li>JavaScript para interações (DOM manipulation, eventos).</li>
+<li>Nenhuma lógica de negócio.</li>
+</ul>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-html">&lt;form id=&quot;task-form&quot;&gt;
+  &lt;input type=&quot;text&quot; id=&quot;task-input&quot; placeholder=&quot;New task...&quot;&gt;
+  &lt;button type=&quot;submit&quot;&gt;Add&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;ul id=&quot;task-list&quot;&gt;&lt;/ul&gt;
+
+&lt;script&gt;
+  document.getElementById('task-form').addEventListener('submit', async (e) =&gt; {
+    e.preventDefault();
+    const title = document.getElementById('task-input').value;
+    const response = await fetch('/api/tasks', {
+      method: 'POST',
+      body: JSON.stringify({ title }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    const json = await response.json();
+    if (json.success) {
+      renderTask(json.data);
+      document.getElementById('task-input').value = '';
+    }
+  });
+&lt;/script&gt;
+</code></pre>
+<h2 id="razoes-arquiteturais">Razões Arquiteturais</h2>
+<table>
+<thead>
+<tr>
+<th>Decisão</th>
+<th>Razão</th>
+<th>Trade-off</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MVC</td>
+<td>Separação de responsabilidades, testabilidade</td>
+<td>Mais arquivos inicialmente</td>
+</tr>
+<tr>
+<td>Mono-repo</td>
+<td>Sincronização frontend/backend, code sharing</td>
+<td>Único repositório para gerenciar</td>
+</tr>
+<tr>
+<td>Dados em memória</td>
+<td>Simplicidade, zero setup BD</td>
+<td>Dados perdidos ao reiniciar</td>
+</tr>
+</tbody>
+</table>
+<h2 id="extensoes-futuras">Extensões Futuras</h2>
+<ul>
+<li><strong>Persistência</strong>: Migrar <code>TaskRepository</code> para usar banco de dados sem quebrar Controllers/Models.</li>
+<li><strong>Autenticação</strong>: Adicionar middleware de auth entre Router e Controller.</li>
+<li><strong>Mobile</strong>: Reutilizar Models/Repositories com novo frontend mobile.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
