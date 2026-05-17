@@ -1,0 +1,35 @@
+:root{--bg:#f5f6f7;--card:#ffffff;--accent:#2b6cb0;--muted:#6b7280;--pending:#2b6cb0;--completed:#16a34a;--cancelled:#ef4444;--highlight:#f59e0b}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#0f172a;margin:0;padding:24px}
+.container{max-width:760px;margin:0 auto}
+h1{margin:0 0 16px}
+.create{display:flex;gap:8px;margin-bottom:16px}
+.create input{flex:1;padding:10px;border:1px solid #e5e7eb;border-radius:8px;background:transparent}
+.create button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+ul{list-style:none;padding:0;margin:0}
+/* Card */
+li.task{background:var(--card);padding:12px;border-radius:10px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 2px rgba(16,24,40,0.04);border-left:6px solid transparent}
+li.task .left{display:flex;flex-direction:column;gap:6px}
+li.task .title{font-weight:600}
+.meta{color:var(--muted);font-size:13px}
+/* Status colors */
+li.task.status-pending{border-left-color:var(--pending)}
+li.task.status-completed{border-left-color:var(--completed);opacity:0.95}
+li.task.status-cancelled{border-left-color:var(--cancelled);opacity:0.9}
+/* Status label */
+.status-label{font-size:12px;padding:4px 8px;border-radius:999px;color:white;font-weight:600}
+.status-label.pending{background:var(--pending)}
+.status-label.completed{background:var(--completed)}
+.status-label.cancelled{background:var(--cancelled)}
+/* Highlight badge */
+.badge{background:var(--highlight);color:#92400e;padding:6px 10px;border-radius:999px;font-size:12px;margin-right:8px}
+/* Actions */
+.actions button{margin-left:8px;padding:6px 10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:transparent;cursor:pointer}
+.actions button:hover{filter:brightness(0.95)}
+.actions .danger{border-color:rgba(239,68,68,0.15);color:var(--cancelled)}
+.actions .primary{background:var(--pending);color:white;border:none}
+/* Responsive */
+@media (max-width:560px){
+  .create{flex-direction:column}
+  .actions{display:flex;gap:8px;margin-top:8px}
+}

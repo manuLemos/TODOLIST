@@ -1,0 +1,31 @@
+{
+  "name": "todolist",
+  "version": "2.0.0",
+  "description": "A minimal TODO application following MVC architecture and engineering best practices",
+  "private": true,
+  "workspaces": [
+    "src/api",
+    "src/web"
+  ],
+  "scripts": {
+    "start": "npm run start --workspaces",
+    "dev": "npm run dev --workspaces",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces",
+    "test": "npm run test --workspaces",
+    "docs": "mkdocs serve"
+  },
+  "keywords": [
+    "todo",
+    "mvc",
+    "monorepo",
+    "best-practices"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

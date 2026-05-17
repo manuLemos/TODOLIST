@@ -1,0 +1,21 @@
+{
+  "name": "todolist-api",
+  "version": "2.0.0",
+  "description": "Backend API for TODOLIST following MVC pattern",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "lint": "echo 'Lint placeholder'",
+    "test": "echo 'Test placeholder'"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "uuid": "^9.0.0",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
